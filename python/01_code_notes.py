@@ -49,3 +49,17 @@ print(fn)
 fn()
 # this also calls inner()
 outer()()
+
+# map(<fn>, <iterable>)
+
+listo = ['i', 'am', 'iterable']
+iterator = map(lambda x: x[::-1], listo)
+
+# iterate over iterator 
+for variable in iterator:
+    print(variable)
+# at this point, `iterator` is empty! you used up its values.
+
+iterator = map(lambda x: x[::-1], listo)
+# converting an iterator into a list(!!)
+print(list(iterator))
