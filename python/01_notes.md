@@ -9,6 +9,8 @@
 **pure function**:  
 - output value follows soley from its input values
 - no observable side effects
+  - doesn't modify externally defined variables 
+- always produces the same output with the same input
 
 
 **side effects**:
@@ -43,6 +45,12 @@ Function composition:
 - lambda comes from lambda calculus 
 - `lambda <parameter-list>: <expression>` --> this is called a lambda expression
 - `callable(fn)` will return true if `fn` is a function or a lambda expression 
+- if you have to name it, then you shouldn't use a lambda function
+- use lambda/anonymous functinos when you have like one-liner functions
+- can't have control structurs or return statements... but it can have conditional statements
+- lambda functions can only return a single value
+  - can't do tuple packing, unless you do explicit tuple packing (e.g. put response in parentheses)
+- has its own local namespace, so variable names don't conflict with outer context
 
 
 # map()
@@ -61,3 +69,16 @@ Function composition:
 - all iterators are iretables, but not vice versa
 - https://realpython.com/python-iterators-iterables/
 
+# map() with multiple iterables
+`map(<fn>, <iter1>, <iter2>, ...)`
+- the length of the iterables themselves doesn't matter, but the iteratbles to arguments has to be 1:1
+
+
+# filter()
+`filter(<fn>, <iterable>)` --> iterator 
+- yields all items from the iterable for which the fn returns a truthy value
+
+# reduce()
+- reducing an iterable to a single value (!!) 
+- applies a function to an iterable's elements two at a time, progressively combining them into a single unit
+- 
